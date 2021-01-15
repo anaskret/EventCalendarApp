@@ -14,6 +14,9 @@ public class EventHelperClass {
         this.minute = minute;
     }
 
+    public String ToString(){
+        return  name + " " + date + " " + hour + ":" + minute;
+    }
     public String getName() {
         return name;
     }

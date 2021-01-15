@@ -13,6 +13,7 @@ import androidx.fragment.app.DialogFragment
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import java.text.DateFormat
+import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.properties.Delegates
 
@@ -97,7 +98,8 @@ class AddEventActivity : AppCompatActivity(), TimePickerDialog.OnTimeSetListener
         c.set(Calendar.MONTH, month)
         c.set(Calendar.DAY_OF_MONTH, dayOfMonth)
 
-        date = DateFormat.getDateInstance(DateFormat.FULL).format(c.time)
+        val dateFormat = SimpleDateFormat("dd-MM-yyyy")
+        date = dateFormat.format(c.time)
 
         dateInputText = findViewById(R.id.event_dateTextView_input)
 

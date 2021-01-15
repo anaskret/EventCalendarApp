@@ -11,6 +11,7 @@
         android:id="@+id/event_list"
         android:layout_width="399dp"
         android:layout_height="626dp"
+        android:textColor="#FFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

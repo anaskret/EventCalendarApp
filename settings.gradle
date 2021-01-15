@@ -1,2 +1,12 @@
+include ':mcalendarview'
+include ':mcalendarview'
+include ':mcalendarview'
+include ':mcalendarview'
+include ':mcalendarview'
+include ':mcalendarview'
+include ':mcalendarview'
+include ':mcalendarview'
+include ':mcalendarview'
 include ':app'
+project(':mcalendarview').projectDir = new File(rootDir, 'SpongeBobSun-mCalendarView-e6e31fd/mcalendarview/')
 rootProject.name = "EventCalendarApp"
