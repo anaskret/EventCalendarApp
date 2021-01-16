@@ -2,14 +2,24 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.eventcalendarapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE " />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EventCalendarApp">
-        <activity android:name=".ListEventsActivity"></activity>
+        <activity android:name=".AddJsonActivity"></activity>
+        <activity
+            android:name=".ListFileActivity"
+            android:label="@string/title_activity_list_file"
+            android:theme="@style/Theme.EventCalendarApp.NoActionBar" />
+        <activity android:name=".ListEventsActivity" />
         <activity android:name=".AddEventActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

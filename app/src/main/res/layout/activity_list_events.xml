@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_500"
+    android:background="@color/teal_700"
     tools:context=".ListEventsActivity">
 
     <ListView
         android:id="@+id/event_list"
         android:layout_width="399dp"
         android:layout_height="626dp"
-        android:textColor="#FFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+    </ListView>
 
     <Button
         android:id="@+id/exit_list_of_events"

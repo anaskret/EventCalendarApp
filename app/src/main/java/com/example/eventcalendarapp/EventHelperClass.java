@@ -15,7 +15,7 @@ public class EventHelperClass {
     }
 
     public String ToString(){
-        return  name + " " + date + " " + hour + ":" + minute;
+        return  "Event name: " + name + "\nStarts at: " + hour + ":" + minute;
     }
     public String getName() {
         return name;

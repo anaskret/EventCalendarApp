@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var myDate: TextView
     private lateinit var addEvent: Button
     private lateinit var seeEvents: Button
+    private lateinit var jsonActivity: Button
 
    /* private lateinit var checkEvents: Query
     private lateinit var listOfDates: ArrayList<String?>*/
@@ -35,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         myDate = findViewById(R.id.myDate)
         addEvent = findViewById(R.id.add_event)
         seeEvents = findViewById(R.id.see_events)
+        jsonActivity = findViewById(R.id.go_to_json_activity)
 
         val dateFormat = SimpleDateFormat("dd-MM-yyyy")
         selectedDate = "15-01-2021"
@@ -57,17 +59,15 @@ class MainActivity : AppCompatActivity() {
                 }
             })*/
 
-        calendarView.setOnDateChangeListener(object : CalendarView.OnDateChangeListener {
-            override fun onSelectedDayChange(view: CalendarView, year: Int, month: Int, dayOfMonth: Int) {
-                val c: Calendar = Calendar.getInstance()
-                c.set(Calendar.YEAR, year)
-                c.set(Calendar.MONTH, month)
-                c.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+        calendarView.setOnDateChangeListener { _, year, month, dayOfMonth ->
+            val c: Calendar = Calendar.getInstance()
+            c.set(Calendar.YEAR, year)
+            c.set(Calendar.MONTH, month)
+            c.set(Calendar.DAY_OF_MONTH, dayOfMonth)
 
-                selectedDate = dateFormat.format(c.time)
-                myDate.text = selectedDate
-            }
-        })
+            selectedDate = dateFormat.format(c.time)
+            myDate.text = selectedDate
+        }
 
         addEvent.setOnClickListener{
             val intent = Intent(this, AddEventActivity::class.java)
@@ -77,6 +77,11 @@ class MainActivity : AppCompatActivity() {
         seeEvents.setOnClickListener {
             val intent = Intent(this, ListEventsActivity::class.java)
             intent.putExtra("SELECTED_DATE", selectedDate)
+            startActivity(intent)
+        }
+
+        jsonActivity.setOnClickListener {
+            val intent = Intent(this, AddJsonActivity::class.java)
             startActivity(intent)
         }
     }

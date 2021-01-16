@@ -18,7 +18,7 @@ class DatePickerFragment : DialogFragment() {
         val month = c[Calendar.MONTH]
         val day = c[Calendar.DAY_OF_MONTH]
         return DatePickerDialog(
-            activity!!,
+            requireActivity(),
             activity as OnDateSetListener?,
             year,
             month,
